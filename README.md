@@ -1,2 +1,14 @@
 # german_hate_speech_detection
-Attempt to detect german hate speech with a dense neural network
+Description: Attempt to detect german hate speech with a dense neural network
+
+The spread of hateful content through social media is a phenomenon that has become more present across multiple social media platforms. In the context of the COVID-19 pandemic, the number of users consuming toxic contents and joining racist, sexist, homophobic, xenophobic, or antisemitic debates has surged. Substantial efforts have been dedicated to research detection mechanisms that spot hate speech, using natural language processing and machine learning. Pre-trained models such as BERT (Bidirectional Encoder Representations from Transformers) have successfully been introduced to this context (Mozafari et al., 2019). While most of the models focus on processing English texts, comparably little effort has been invested in building solutions to detect hate speech in other languages (Assenmacher et al., 2021).
+
+The aim of this term project is to build a binary classification model that assesses whether a German text message contains hateful content. Various neural network architectures and constellations of hyper-parameters will be tested in order to find the optimal constellation which increases accuracy. To train the model, a dataset consisting of 85’000 user comments of the German local newspaper ‘Rheinische Post’ are pre-processed and used. About 10% of the user comments have previously been identified as being offensive and were removed by the news portal operator. Thus, this deletion status serves as binary target variable to train and evaluate the model (Assenmacher et al., 2021). 
+
+Using Grid search, forty different model instances are trained and evaluated using a combination of Embedding-, Dropout-, and Dense Layers. Using best parameter combination, the model reaches an accuracy of 89% on both training and validation data. The training cycle also demonstrated the importance of regularization techniques to prevent the model from overfitting. Manual checks then show that the toxicity scoring increases the more offensive words are used. However, especially for sentences that have a defaming meaning but where no strong vocabulary is used, the model is not fully able to capture the semantic meaning. Going forward the author suggests the combination of pre-trained models with the suggested network architecture.
+
+Literature:
+  Assenmacher, D., Niemann, M., Müller, K., Seiler, M., Riehle, D. M., & Trautmann, H. (2021). RP-Mod & RP-Crowd: Moderator- and crowd-annotated german news comment datasets. In Proceedings of the Neural Information Processing Systems Track on Datasets and Benchmark.
+  
+	Mozafari, M., Farahbakhsh, R., & Crespi, N. (2019). A BERT-Based Transfer Learning Approach for Hate Speech Detection in Online Social Media. ArXiv:1910.12574 [Cs]. http://arxiv.org/abs/1910.12574
+
